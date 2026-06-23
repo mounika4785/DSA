@@ -1,30 +1,41 @@
-# LeetCode DSA Solutions
+# Data Structures & Algorithms
 
-This repository contains my solutions to LeetCode Data Structures and Algorithms problems solved in Java. The goal is to strengthen problem-solving skills, master core DSA concepts, and prepare for technical interviews at top product-based companies.
+This repository contains my solutions to Data Structures and Algorithms problems solved on LeetCode and GeeksforGeeks (GFG).
+
+## Purpose
+
+* Strengthen problem-solving skills.
+* Master DSA concepts and patterns.
+* Prepare for coding interviews and competitive programming.
+* Track my learning progress consistently.
 
 ## Topics Covered
-- Arrays & Strings
-- Linked Lists
-- Stacks & Queues
-- Hashing
-- Recursion & Backtracking
-- Trees & Binary Search Trees
-- Heaps & Priority Queues
-- Graphs
-- Greedy Algorithms
-- Dynamic Programming
-- Sliding Window
-- Two Pointers
-- Binary Search
-- Bit Manipulation
-- Trie
-- Segment Tree & Fenwick Tree
 
-## Objectives
-- Improve coding and problem-solving skills
-- Build strong DSA fundamentals
-- Prepare for coding interviews and online assessments
-- Maintain a structured record of solved problems
+* Arrays
+* Strings
+* Linked Lists
+* Stacks & Queues
+* Trees & Binary Trees
+* Binary Search Trees
+* Heaps
+* Hashing
+* Recursion & Backtracking
+* Greedy Algorithms
+* Dynamic Programming
+* Graphs
+* Tries
+* Sliding Window
+* Two Pointers
+* Binary Search
+* Bit Manipulation
 
-Language: Java
-Platform: LeetCode
+## Language
+
+* Java
+
+## Platforms
+
+* LeetCode
+* GeeksforGeeks (GFG)
+
+I am currently mastering Data Structures & Algorithms through consistent practice, pattern recognition, and optimized problem-solving approaches.
