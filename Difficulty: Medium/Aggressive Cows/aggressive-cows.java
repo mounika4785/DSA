@@ -1,31 +1,30 @@
-import java.util.*;
 class Solution {
-    public int aggressiveCows(int[] stalls, int k) {
-        Arrays.sort(stalls);
-        int low = 1;
-        int high = stalls[stalls.length - 1] - stalls[0];
-        int result = 0;
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            if (canPlace(stalls, k, mid)) {
-                result = mid;
-                low = mid + 1;
-            } else {
-                high = mid - 1;
-            }
+    public int noOf(int arr[] , int val){
+        int cows = 1;
+        int dis = arr[0];
+        for(int num : arr){
+           if(num - dis >= val){
+               dis = num;
+               cows++;
+           }
         }
-        return result;
+        return cows;
     }
-    private boolean canPlace(int[] stalls, int k, int dist) {
-        int count = 1;
-        int lastPos = stalls[0];
-        for (int i = 1; i < stalls.length; i++) {
-            if (stalls[i] - lastPos >= dist) {
-                count++;
-                lastPos = stalls[i];
+    public int aggressiveCows(int[] arr, int k) {
+        Arrays.sort(arr);
+        int low = 1;
+        int n = arr.length;
+        int high = arr[n-1]-arr[0];
+        
+        while(low <= high){
+            int mid = (low + high)/2;
+            int cows = noOf(arr,mid);
+            if(cows >= k){
+                low = mid + 1;
             }
-            if (count == k) return true;
+            else
+                high = mid - 1;
         }
-        return false;
+        return high;    
     }
 }
