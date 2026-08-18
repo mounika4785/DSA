@@ -1,46 +1,60 @@
-import java.util.*;
-
 class Solution {
     public ArrayList<String> ratInMaze(int[][] maze) {
+        ArrayList<String> list = new ArrayList<>();
         int n = maze.length;
-        ArrayList<String> result = new ArrayList<>();
         boolean[][] visited = new boolean[n][n];
-        
-        // If start or destination is blocked, no paths exist
-        if (maze[0][0] == 0 || maze[n-1][n-1] == 0) return result;
-        
-        dfs(0, 0, maze, visited, n, "", result);
-        Collections.sort(result); // ensure lexicographic order
-        return result;
+
+        if (maze[0][0] == 0 || maze[n - 1][n - 1] == 0)
+            return list;
+
+        StringBuilder str = new StringBuilder();
+
+        check(maze, list, str, 0, 0, visited);
+
+        return list;
     }
-    
-    private void dfs(int i, int j, int[][] maze, boolean[][] visited, int n, String path, ArrayList<String> result) {
-        // Destination reached
-        if (i == n-1 && j == n-1) {
-            result.add(path);
+
+    public void check(int[][] maze, ArrayList<String> list,
+                      StringBuilder str, int row, int col,
+                      boolean[][] visited) {
+
+        int n = maze.length;
+
+        if (row == n - 1 && col == n - 1) {
+            list.add(str.toString());
             return;
         }
-        
-        visited[i][j] = true;
-        
-        // Explore in lexicographic order: D, L, R, U
-        // Down
-        if (i+1 < n && maze[i+1][j] == 1 && !visited[i+1][j]) {
-            dfs(i+1, j, maze, visited, n, path + "D", result);
+
+        visited[row][col] = true;
+
+        if (row + 1 < n && maze[row + 1][col] == 1
+                && !visited[row + 1][col]) {
+            str.append('D');
+            check(maze, list, str, row + 1, col, visited);
+            str.deleteCharAt(str.length() - 1);
         }
-        // Left
-        if (j-1 >= 0 && maze[i][j-1] == 1 && !visited[i][j-1]) {
-            dfs(i, j-1, maze, visited, n, path + "L", result);
+
+        if (col - 1 >= 0 && maze[row][col - 1] == 1
+                && !visited[row][col - 1]) {
+            str.append('L');
+            check(maze, list, str, row, col - 1, visited);
+            str.deleteCharAt(str.length() - 1);
         }
-        // Right
-        if (j+1 < n && maze[i][j+1] == 1 && !visited[i][j+1]) {
-            dfs(i, j+1, maze, visited, n, path + "R", result);
+
+        if (col + 1 < n && maze[row][col + 1] == 1
+                && !visited[row][col + 1]) {
+            str.append('R');
+            check(maze, list, str, row, col + 1, visited);
+            str.deleteCharAt(str.length() - 1);
         }
-        // Up
-        if (i-1 >= 0 && maze[i-1][j] == 1 && !visited[i-1][j]) {
-            dfs(i-1, j, maze, visited, n, path + "U", result);
+
+        if (row - 1 >= 0 && maze[row - 1][col] == 1
+                && !visited[row - 1][col]) {
+            str.append('U');
+            check(maze, list, str, row - 1, col, visited);
+            str.deleteCharAt(str.length() - 1);
         }
-        
-        visited[i][j] = false; // backtrack
+
+        visited[row][col] = false;
     }
 }
