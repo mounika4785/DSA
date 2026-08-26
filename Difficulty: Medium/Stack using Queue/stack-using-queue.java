@@ -1,14 +1,11 @@
-import java.util.*;
-
 class myStack {
     Queue<Integer> q = new LinkedList<>();
 
     void push(int x) {
-        q.offer(x);
+        q.add(x);
 
-        int n = q.size();
-        for (int i = 0; i < n - 1; i++) {
-            q.offer(q.poll());
+        for (int i = 0; i < q.size() - 1; i++) {
+            q.add(q.poll());
         }
     }
 
@@ -22,6 +19,7 @@ class myStack {
         if (q.isEmpty()) {
             return -1;
         }
+
         return q.peek();
     }
 
