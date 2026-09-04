@@ -1,0 +1,12 @@
+<h2><a href="https://www.geeksforgeeks.org/problems/lucky-numbers2911/1">Lucky Numbers</a></h2><h3>Difficulty Level : Difficulty: Medium</h3><hr><div class="problems_problem_content__Xm_eO" style="--text-color: var(--problem-text-color);"><p data-path-to-node="2"><span style="font-size: 14pt;">Given an integer <strong>n</strong>, determine if it is a <strong data-path-to-node="2" data-index-in-node="41">Lucky Number</strong>.</span></p>
+<p data-path-to-node="3"><span style="font-size: 14pt;">Lucky numbers are identified using a elimination process on the infinite sequence of natural numbers (1, 2, 3, 4, ...):<br>&nbsp; &nbsp;<strong>1. </strong>Remove every 2nd number from the sequence.<br>&nbsp; &nbsp;<strong>2. </strong>From the remaining sequence, remove every 3rd number.<br>&nbsp; &nbsp;<strong>3. </strong>From the remaining sequence, remove every 4th number,&nbsp;</span><span style="font-size: 18.6667px;">and so on...</span></p>
+<p data-path-to-node="3"><span style="font-size: 18.6667px;">This continues indefinitely.&nbsp;</span><span style="font-size: 18.6667px;">Return <strong>true</strong></span><span style="font-size: 18.6667px;"><strong> </strong>if <strong>n</strong></span><span style="font-size: 18.6667px;"> survives the elimination process (is a lucky number). Otherwise, return <strong>false</strong></span><span style="font-size: 18.6667px;">.</span></p>
+<p data-start="53" data-end="119"><strong style="font-size: 18px;">Examples :</strong></p>
+<pre><span style="font-size: 18px;"><strong>Input: </strong>n = 5
+<strong>Output: </strong>false<strong>
+Explanation: </strong>5 is not a lucky number as it gets deleted in the second iteration.
+</span></pre>
+<pre><span style="font-size: 18px;"><strong>Input: </strong>n = 19
+<strong>Output: </strong>true<strong>
+Explanation: </strong>19 is a lucky number because it does not get deleted throughout the process.</span></pre>
+<p><span style="font-size: 18px;"><strong>Constraints:</strong></span><br><span style="font-size: 18px;">1&nbsp;<span style="font-size: 18.6667px;">≤ </span>&nbsp;n <span style="font-size: 18.6667px;">≤ </span>&nbsp;10<sup>8</sup></span></p></div><p><span style=font-size:18px><strong>Company Tags : </strong><br><code>Microsoft</code>&nbsp;<br><p><span style=font-size:18px><strong>Topic Tags : </strong><br><code>Mathematics</code>&nbsp;<code>Recursion</code>&nbsp;
